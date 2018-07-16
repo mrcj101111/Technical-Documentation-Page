@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Technical Documentation Page</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <!--head-->
+<head>
+</head>
+
+<!--Body-->
+<body>
+  <div class="container">
+    
+    <!--nav-section-->
+    <div id="navbar">
+      <header>
+        <h2>Getting started with HTML</h2>
+      </header>
+      <ul>
+        <a class="nav-link" href="#HTML" rel="internal"><li>What is HTML?</li></a>
+        <a class="nav-link" href="#Anatomy" rel="internal"><li>Anatomy of an HTML element</li></a>
+        <a class="nav-link" href="#Nesting" rel="internal"><li>Nesting elements</li></a>
+        <a class="nav-link" href="#Block" rel="internal"><li>Block versus inline elements</li></a>
+        <a class="nav-link" href="#Empty" rel="internal"><li>Empty elements</li></a>
+        <a class="nav-link" href="#Attributes" rel="internal"><li>Attributes</li></a>
+        <a class="nav-link" href="#Adding_Attributes" rel="internal"><li>Adding attributes to an element</li></a>
+        <a class="nav-link" href="#Boolean" rel="internal"><li>Boolean attributes</li></a>
+        <a class="nav-link" href="#Omiting_quotes" rel="internal"><li>Omitting quotes around attribute values</li></a>
+        <a class="nav-link" href="#S_or_D" rel="internal"><li>Single or double quotes?</li></a>
+        <a class="nav-link" href="#Anatomy" rel="internal"><li>Anatomy of a HTML document</li></a>
+      </ul>
+    </div>
+    
+    <!--Main document-->
+    <div id="main-doc">
+      <div class="main-section" id="HTML">
+        <h3>What is HTML?</h3>
+        <p>
+          HTML (Hypertext Markup Language) is not a programming language; it is a markup language used to tell your browser how to structure the web pages you visit. It can be as complicated or as simple as the web developer wishes it to be. HTML consists of a series of elements, which you use to enclose, wrap, or mark up different parts of the content to make it appear or act a certain way. The enclosing tags can make a bit of content into a hyperlink to link to another page on the web, italicize words, and so on.  For example, take the following line of content:
+        </p>
+        <code>1 | My cat is very grumpy</code>
+        <p>
+          If we wanted the line to stand by itself, we could specify that it is a paragraph by enclosing it in a paragraph "p" element:
+        </p>
+        <code>1 | &ltp&gtMy cat is very grumpy&lt/p&gt</span></code>
+      <p>
+        Note: Tags in HTML are case-insensitive, i.e. they can be written in uppercase or lowercase. For example, a &lttitle> tag could be written as &lttitle&gt, &ltTITLE&gt, &ltTitle&gt, &ltTiTlE&gt, etc., and it will work fine. Best practice, however, is to write all tags in lowercase for consistency, readability, and other reasons.
+      </p>
+      </div>
+    
+    <div class="main-section" id="Anatomy">
+        <h3>Anatomy of an HTML element</h3>
+      <p>
+        Let's explore our paragraph element a bit further:
+      </p>
+      <img src="https://mdn.mozillademos.org/files/9347/grumpy-cat-small.png">
+      <p>
+        The main parts of our element are:
+      </p>
+      <ul>
+        <li><b>The opening tag:</b> This consists of the name of the element (in this case, p), wrapped in opening and closing angle brackets. This states where the element begins or starts to take effect — in this case where the start of the paragraph is.</li>
+        <br>
+        <li><b>The closing tag:</b> This is the same as the opening tag, except that it includes a forward slash before the element name. This states where the element ends — in this case where the end of the paragraph is. Failing to include a closing tag is a common beginner error and can lead to strange results.</li>
+        <br>
+        <li><b>The content:</b> This is the content of the element, which in this case is just text.</li>
+        <br>
+        <li><b>The element:</b> The opening tag plus the closing tag plus the content equals the element.</li>
+      </ul>
+    </div>
+    
+    <div class="main-section" id="Nesting">
+        <h3>Nesting elements</h3>
+      <p>You can put elements inside other elements too — this is called <b>nesting</b>. If we wanted to state that our cat is very grumpy, we could wrap the word "very" in a &ltstrong&gt element, which means that the word is to be strongly emphasized:</p>
+      <code>1 | &ltp&gtMy cat is &ltstrong&gtvery&lt/strong&gt grumpy.&lt/p&gt</code>
+      <p>
+        You do however need to make sure that your elements are properly nested: in the example above, we opened the <b>p</b> element first, then the <b>strong</b> element, therefore we have to close the <b>strong</b> element first, then the <b>p</b>. The following is incorrect:
+      </p>
+      <code>1 | &ltp&gtMy cat is &ltstrong&gt>very grumpy.&lt/p&gt&lt/strong&gt</code>
+      <p>
+        The elements have to open and close correctly, so they are clearly inside or outside one another. If they overlap like above, then your web browser will try to make a best guess at what you were trying to say, and you may well get unexpected results. So don't do it!
+      </p>
+    </div>
+    
+    <div class="main-section" id="Block">
+        <h3>Block versus inline elements</h3>
+      <p>
+        There are two important categories of elements in HTML which you should know about. They are block-level elements and inline elements.
+      </p>
+      <ul>
+        <li>Block-level elements form a visible block on a page — they will appear on a new line from whatever content went before it, and any content that goes after it will also appear on a new line. Block-level elements tend to be structural elements on the page that represent, for example, paragraphs, lists, navigation menus, footers, etc. A block-level element wouldn't be nested inside an inline element, but it might be nested inside another block-level element.</li>
+        <li>Inline elements are those that are contained within block-level elements and surround only small parts of the document’s content, not entire paragraphs and groupings of content. An inline element will not cause a new line to appear in the document; they would normally appear inside a paragraph of text, for example an &lta&gt element (hyperlink) or emphasis elements such as &ltem&gt or &ltstrong&gt.</li>
+      </ul>
+        <p>
+          Take the following example:
+        </p>
+        <code>1 | &ltem&gtfirst&lt/em&gt&ltem&gtsecond&lt/em&gt&ltem&gtthird&lt/em&gt
+          <br>
+2 | 
+          <br>
+3 | &ltp&gtfourth&lt/p&gt&ltp&gtfifth&lt/p&gt&ltp&gtsixth&lt/p&gt
+        </code>
+        <p>
+          &ltem&gt is an inline element, so as you can see below, the first three elements sit on the same line as one another with no space in between. On the other hand, &ltp&gt is a block-level element, so each element appears on a new line, with space above and below each (the spacing is due to default CSS styling that the browser applies to paragraphs).
+        </p>
+    </div>
+      
+      <div class="main-section" id="Empty">
+        <h3>Empty elements</h3>
+        <p>
+          Not all elements follow the above pattern of opening tag, content, closing tag. Some elements consist only of a single tag, which is usually used to insert/embed something in the document at the place it is included. For example, the &ltimg&gt element embeds an image file onto a page in the position it is included in:
+        </p>
+        <code>1 | &ltimg src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png"&gt</code>
+        <p>
+          This would output the following on your page:
+        </p>
+        <img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" id="firefox">
+    </div>
+        
+        <div class="main-section" id="Attributes">
+        <h3>Attributes</h3>
+          <p>
+            Elements can also have attributes, which look like this:
+          </p>
+          <img src="https://mdn.mozillademos.org/files/9345/grumpy-cat-attribute-small.png">
+          <p>
+            Attributes contain extra information about the element which you don't want to appear in the actual content. In this case, the class attribute allows you to give the element an identifying name that can be later used to target the element with style information and other things.
+          </p>
+          <p>
+            An attribute should have:
+          </p>
+          <ul>
+            <li>A space between it and the element name (or the previous attribute, if the element already has one or more attributes.)</li>
+            <li>The attribute name, followed by an equals sign.</li>
+            <li>An attribute value, with opening and closing quote marks wrapped around it.</li>
+          </ul>
+        </div>
+            
+            <div class="main-section" id="Adding_Attributes">
+        <h3>Adding attributes to an element</h3>
+              <p>
+                Another example of an element is &lta&gt — this stands for "anchor" and will make the piece of text it wraps around into a hyperlink. This can take a number of attributes, but several are as follows:
+              </p>
+              <ul>
+                <li>href: This attribute specifies as its value the web address that you want the link to point to; where the browser navigates to when the link is clicked. For example, href="https://www.mozilla.org/".</li>
+                <li>title: The title attribute specifies extra information about the link, such as what the page is that you are linking to. For example, title="The Mozilla homepage". This will appear as a tooltip when hovered over.</li>
+                <li>target: The target attribute specifies the browsing context which will be used to display the link. For example, target="_blank" will display the link in a new tab. If you want to display the link in the current tab just omit this attribute.</li>
+              </ul>
+              <p>
+                Edit the line below in the Input area to turn it into a link to your favorite website. First, add the &lta&gt element. Second, add the href attribute and the title attribute. Lastly, specify target attribute to open the link in the new tab. You'll be able to see your changes update live in the Output area. You should see a link that when hovered over displays the title attribute's content, and when clicked navigates to the web address in the href element. Remember that you need to include a space between the element name, and each attribute.
+              </p>
+              <p>
+                If you make a mistake, you can always reset it using the Reset button. If you get really stuck, press the Show solution button to see the answer.
+              </p>
+          </div>
+              
+              <div class="main-section" id="Boolean">
+        <h3>Boolean attributes</h3>
+                <p>
+                  You'll sometimes see attributes written without values — this is perfectly allowed. These are called boolean attributes, and they can only have one value, which is generally the same as the attribute name. As an example, take the disabled attribute, which you can assign to form input elements if you want them to be disabled (greyed out) so the user can't enter any data in them.
+                </p>
+                <code>1 | &ltinput type="text" disabled="disabled"&gt</code>
+                <p>
+                  As shorthand, it is perfectly allowable to write this as follows (we've also included a non-disabled form input element for reference, to give you more of an idea what is going on):
+                </p>
+                <code>1 | &ltinput type="text" disabled&gt
+          <br>
+2 | 
+          <br>
+3 | &ltinput type="text"&gt
+        </code>
+              </div>
+          
+          <div class="main-section" id="Omiting_quotes">
+        <h3>Omitting quotes around attribute values</h3>
+            <p>
+              When you look around the World Wide Web, you'll come across all kind of strange markup styles, including attribute values without quotes. This is allowable in certain circumstances, but will break your markup in others. For example, if we revisit our link example from earlier, we could write a basic version with only the href attribute, like this:
+            </p>
+            <code>1 | &lta href=https://www.mozilla.org/&gtfavorite website&lt/a&gt</code>
+            <p>
+              However, as soon as we add the title attribute in this style, things will go wrong:
+            </p>
+            <code>1 | &lta href=https://www.mozilla.org/ title=The Mozilla homepage&gtfavorite website&lt/a&gt</code>
+            <p>
+              At this point the browser will misinterpret your markup, thinking that the title attribute is actually three attributes — a title attribute with the value "The", and two boolean attributes, Mozilla and homepage. This is obviously not what was intended, and will cause errors or unexpected behavior in the code, as seen in the live example below. Try hovering over the link to see what the title text is!
+            </p>
+        </div>
+            
+            <div class="main-section" id="S_or_D">
+        <h3>Single or double quotes?</h3>
+              <p>
+                In this article you'll notice that the attributes are all wrapped in double quotes. You might however see single quotes in some people's HTML. This is purely a matter of style, and you can feel free to choose which one you prefer. Both the following lines are equivalent:
+              </p>
+              <code>1 | &lta href="http://www.example.com"&gtA link to my example.&lt/a&gt
+          <br>
+2 | 
+          <br>
+3 | &lta href='http://www.example.com'&gtA link to my example.&lt/a&gt
+        </code>
+              <p>
+                You should however make sure you don't mix them together. The following will go wrong!
+              </p>
+              <code>1 | &lta href="http://www.example.com'&gtA link to my example.&lt/a&gt</code>
+              <p>
+                If you've used one type of quote in your HTML, you can include the other type of quote without causing any problems:
+              </p>
+              <code>1 | &lta href="http://www.example.com" title="Isn't this fun?"&gtA link to my example.&lt/a&gt</code>
+              <p>
+                However if you want to include a quote within the quotes where both the quotes are of the same type(single quote or double quote), you'll have to use HTML entities for the quotes.
+              </p>
+            </div>
+            
+            <div class="main-section" id="Anatomy">
+        <h3>Single or double quotes?</h3>
+              <p>
+                That wraps up the basics of individual HTML elements, but they aren't very useful on their own. Now we'll look at how individual elements are combined to form an entire HTML page:
+              </p>
+              <code>
+                1 | &lt!DOCTYPE html&gt
+                <br>
+                2 | &lthtml&gt
+                <br>
+                3 | &lthead&gt
+                <br>
+                4 | &ltmeta charset="utf-8"&gt
+                <br>
+                5 | &lttitle&gtMy test page&lt/title&gt
+                <br>
+                6 | &lt/head&gt
+                <br>
+                7 | &ltbody&gt
+                <br>
+                8 | &ltp&gtThis is my page&lt/p&gt
+                <br>
+                9 | &lt/body&gt
+                <br>
+                10| &lt/html&gt
+              </code>
+              <p>
+                Here we have:
+              </p>
+              <ul>
+                <li>&lt!DOCTYPE html&gt: The doctype. In the mists of time, when HTML was young (about 1991/2), doctypes were meant to act as links to a set of rules that the HTML page had to follow to be considered good HTML, which could mean automatic error checking and other useful things. However, these days no one really cares about them, and they are really just a historical artifact that needs to be included for everything to work right. &lt!DOCTYPE html&gt is the shortest string of characters that counts as a valid doctype; that's all you really need to know.</li>
+                <li>&lthtml&gt&lt/html&gt: The &lthtml&gt element. This element wraps all the content on the entire page, and is sometimes known as the root element.</li>
+                <li>&lthead&gt&lt/head&gt: The &lthead&gt element. This element acts as a container for all the stuff you want to include on the HTML page that isn't the content you are showing to your page's viewers. This includes things like keywords and a page description that you want to appear in search results, CSS to style our content, character set declarations, and more. You'll learn more about this in the next article in the series.</li>
+                <li>&ltmeta charset="utf-8"&gt: This element sets the character set your document should use to UTF-8, which includes most characters from the vast majority of human written languages. Essentially it can now handle any textual content you might put on it. There is no reason not to set this, and it can help avoid some problems later.</li>
+                <li>&lttitle&gt&lt/title&gt: The &lttitle&gt element. This sets the title of your page, which is the title that appears in the browser tab the page is loaded in, and is used to describe the page when you bookmark/favorite it.</li>
+                <li>&ltbody&gt&lt/body&gt: The &ltbody&gt element. This contains all the content that you want to show to web users when they visit your page, whether that's text, images, videos, games, playable audio tracks, or whatever else.</li>
+              </ul>
+            </div>
+    
+    </div> <!--Main doc closing-->
+  </div>
+</body>
+  
+  
+
+</body>
+
+</html>
